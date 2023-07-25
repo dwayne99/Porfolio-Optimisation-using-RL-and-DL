@@ -11,11 +11,14 @@ def get_closing_prices(tickers, start_date, end_date, time_interval):
     for ticker in tickers:
         # Fetch the historical prices for the ticker
         yahoo_financials = YahooFinancials(ticker, country="US")
-        historical_data = yahoo_financials.get_historical_price_data(start_date, end_date, time_interval)
+        try:
+            historical_data = yahoo_financials.get_historical_price_data(start_date, end_date, time_interval)
 
-        # Extract the closing prices
-        dates = [x['formatted_date'] for x in historical_data[ticker]['prices']]
-        closes = [x['close'] for x in historical_data[ticker]['prices']]
+            # Extract the closing prices
+            dates = [x['formatted_date'] for x in historical_data[ticker]['prices']]
+            closes = [x['close'] for x in historical_data[ticker]['prices']]
+        except:
+            print(ticker)
 
         # Create a DataFrame for the current ticker
         df = pd.DataFrame({'Date': dates, ticker: closes})
