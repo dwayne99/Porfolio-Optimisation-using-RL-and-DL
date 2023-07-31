@@ -1,5 +1,14 @@
 import pandas as pd
 
+# Tickers of the Stocks to examine within the portfolio
+# tickers = ['META.L','AMZN.L','AAPL', 'GOOG', 'NFLX', 'MSFT', 'TSLA']
+# tickers = ['META', 'AMZN', 'AAPL', 'GOOG', 'NFLX', 'MSFT', 'TSLA', 'BP', 'GSK', 'RIO', 'AAL', 'AZN', 'PRU', 'VOD', 'BHP', 'NG', 'WPP']
+# tickers = "BP.L SHEL.L SSE.L HSBA.L LLOY.L STAN.L TSCO.L SBRY.L MKS.L GSK.L AZN.L HIK.L SGE.L SCT.L SXS.L RR.L SMIN.L WEIR.L VOD.L BT-A.L ULVR.L DGE.L RKT.L BBY.L COST.L MGNS.L"
+# tickers = "SHEL.L ULVR.L HSBA.L BP.L AZN.L GSK.L BATS.L DGE.L RIO.L RKT.L LLOY.L VOD.L"
+# # Selecting the top-10 mid-cap stocks
+# tickers = "TTWO SIX ALK JBLU JACK LYV DISH ZG"
+
+
 # Data
 from yahoofinancials import YahooFinancials
 
