@@ -10,6 +10,8 @@ from tensorflow.keras.optimizers import Adam
 
 import pandas as pd
 
+from tensorflow.keras.utils import plot_model
+
 
 class WeightSelectorLSTM:
     def __init__(self):
@@ -31,6 +33,8 @@ class WeightSelectorLSTM:
             Dropout(0.2),
             Dense(outputs, activation='softmax')
         ])
+        # Assuming 'model' is your Keras model
+        plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
         def sharpe_loss(_, y_pred):
             # make all time-series start at 1
