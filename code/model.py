@@ -45,11 +45,11 @@ class WeightSelectorLSTM:
             
             portfolio_returns = (portfolio_values[1:] - portfolio_values[:-1]) / portfolio_values[:-1]  # % change formula
 
-            sharpe = K.mean(portfolio_returns) / K.std(portfolio_returns)
+            sharpe_ratio = K.mean(portfolio_returns) / K.std(portfolio_returns)
             
             # since we want to maximize Sharpe, while gradient descent minimizes the loss, 
             #   we can negate Sharpe (the min of a negated function is its max)
-            return -sharpe
+            return -sharpe_ratio
         
         adam = Adam(learning_rate=0.009) 
         model.compile(loss=sharpe_loss, optimizer=adam)
